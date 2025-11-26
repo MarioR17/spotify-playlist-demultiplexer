@@ -6,7 +6,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-                     scope="playlist-modify-public playlist-modify-private user-library-read"
+    scope=(
+        "playlist-modify-public "
+        "playlist-modify-private "
+        "user-library-read"
+    )
 ))
 
 user = sp.current_user()
